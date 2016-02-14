@@ -70,5 +70,29 @@ public class Bench16 {
 		System.out.println(resultWs);
 		
 		System.out.println("short adding is quickly then Short adding in " + resultWs/resultS + " times");
+		
+		
+		//performance comparison between int vs. Integer by adding the value to itself 1,000,000,000 times 
+		int in = 0;
+		final long startIn = System.currentTimeMillis();
+		for (int i = 0; i < num; i++) {
+			++b;
+		}
+		final long finishIn = System.currentTimeMillis();
+		final long resultIn = (finishIn - startIn);
+		System.out.print("\nint adding time, ms: ");
+		System.out.println(resultIn);
+		
+		Integer wi = 0;
+		final long startWi = System.currentTimeMillis();
+		for (int i = 0; i < num; i++) {
+			++wb;
+		}
+		final long finishWi = System.currentTimeMillis();
+		final long resultWi = (finishWi - startWi);
+		System.out.print("Integer adding time, ms: ");
+		System.out.println(resultWi);
+		
+		System.out.println("int adding is quickly then Integer adding in " + resultWi/resultIn + " times");
 	}
 }
