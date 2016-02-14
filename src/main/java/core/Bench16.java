@@ -38,7 +38,7 @@ public class Bench16 {
 		
 		Byte wb = 0;
 		final long startWb = System.currentTimeMillis();
-		for (int i = 0; i < num; i++) {
+		for (long i = 0; i < num; i++) {
 			++wb;
 		}
 		final long finishWb = System.currentTimeMillis();
@@ -51,8 +51,8 @@ public class Bench16 {
 		//performance comparison between short vs. Short by adding the value to itself 1,000,000,000 times 
 		short s = 0;
 		final long startS = System.currentTimeMillis();
-		for (int i = 0; i < num; i++) {
-			++b;
+		for (long i = 0; i < num; i++) {
+			++s;
 		}
 		final long finishS = System.currentTimeMillis();
 		final long resultS = (finishS - startS);
@@ -61,8 +61,8 @@ public class Bench16 {
 		
 		Short ws = 0;
 		final long startWs = System.currentTimeMillis();
-		for (int i = 0; i < num; i++) {
-			++wb;
+		for (long i = 0; i < num; i++) {
+			++ws;
 		}
 		final long finishWs = System.currentTimeMillis();
 		final long resultWs = (finishWs - startWs);
@@ -75,8 +75,8 @@ public class Bench16 {
 		//performance comparison between int vs. Integer by adding the value to itself 1,000,000,000 times 
 		int in = 0;
 		final long startIn = System.currentTimeMillis();
-		for (int i = 0; i < num; i++) {
-			++b;
+		for (long i = 0; i < num; i++) {
+			++in;
 		}
 		final long finishIn = System.currentTimeMillis();
 		final long resultIn = (finishIn - startIn);
@@ -85,8 +85,8 @@ public class Bench16 {
 		
 		Integer wi = 0;
 		final long startWi = System.currentTimeMillis();
-		for (int i = 0; i < num; i++) {
-			++wb;
+		for (long i = 0; i < num; i++) {
+			++wi;
 		}
 		final long finishWi = System.currentTimeMillis();
 		final long resultWi = (finishWi - startWi);
@@ -94,5 +94,29 @@ public class Bench16 {
 		System.out.println(resultWi);
 		
 		System.out.println("int adding is quickly then Integer adding in " + resultWi/resultIn + " times");
+		
+		
+		//performance comparison between long vs. Long by adding the value to itself 1,000,000,000 times 
+		long l = 0L;
+		final long startL = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++l;
+		}
+		final long finishL = System.currentTimeMillis();
+		final long resultL = (finishL - startL);
+		System.out.print("\nlong adding time, ms: ");
+		System.out.println(resultL);
+		
+		Long wl = 0L;
+		final long startWl = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++wl;
+		}
+		final long finishWl = System.currentTimeMillis();
+		final long resultWl = (finishWl - startWl);
+		System.out.print("Long adding time, ms: ");
+		System.out.println(resultWl);
+		
+		System.out.println("long adding is quickly then Long adding in " + resultWl/resultL + " times");
 	}
 }
