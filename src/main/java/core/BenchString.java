@@ -36,7 +36,6 @@ public class BenchString {
 	final long finish = System.currentTimeMillis();
 	final long result = (finish - start);
 		System.out.println("Using String, elapsed milliseconds: " + result);
-	}
-		
+	}	
 }
 
