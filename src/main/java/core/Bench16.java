@@ -118,5 +118,29 @@ public class Bench16 {
 		System.out.println(resultWl);
 		
 		System.out.println("long adding is quickly then Long adding in " + resultWl/resultL + " times");
+		
+		
+		//performance comparison between float vs. Float by adding the value to itself 1,000,000,000 times 
+		float f = 0.0F;
+		final long startF = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++f;
+		}
+		final long finishF = System.currentTimeMillis();
+		final long resultF = (finishF - startF);
+		System.out.print("\nfloat adding time, ms: ");
+		System.out.println(resultF);
+		
+		Float wf = 0.0F;
+		final long startWf = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++wf;
+		}
+		final long finishWf = System.currentTimeMillis();
+		final long resultWf = (finishWf - startWf);
+		System.out.print("Float adding time, ms: ");
+		System.out.println(resultWf);
+		
+		System.out.println("float adding is quickly then Float adding in " + resultWf/resultF + " times");
 	}
 }
