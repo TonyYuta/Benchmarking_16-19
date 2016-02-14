@@ -47,5 +47,28 @@ public class Bench16 {
 		System.out.println(resultWb);
 		
 		System.out.println("byte adding is quickly then Byte adding in " + resultWb/resultB + " times");
+		
+		//performance comparison between short vs. Short by adding the value to itself 1,000,000,000 times 
+		short s = 0;
+		final long startS = System.currentTimeMillis();
+		for (int i = 0; i < num; i++) {
+			++b;
+		}
+		final long finishS = System.currentTimeMillis();
+		final long resultS = (finishS - startS);
+		System.out.print("\nshort adding time, ms: ");
+		System.out.println(resultS);
+		
+		Short ws = 0;
+		final long startWs = System.currentTimeMillis();
+		for (int i = 0; i < num; i++) {
+			++wb;
+		}
+		final long finishWs = System.currentTimeMillis();
+		final long resultWs = (finishWs - startWs);
+		System.out.print("Short adding time, ms: ");
+		System.out.println(resultWs);
+		
+		System.out.println("short adding is quickly then Short adding in " + resultWs/resultS + " times");
 	}
 }
