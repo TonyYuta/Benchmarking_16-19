@@ -142,5 +142,29 @@ public class Bench16 {
 		System.out.println(resultWf);
 		
 		System.out.println("float adding is quickly then Float adding in " + resultWf/resultF + " times");
+		
+		
+		//performance comparison between double vs. Double by adding the value to itself 1,000,000,000 times 
+		double d = 0.0D;
+		final long startD = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++d;
+		}
+		final long finishD = System.currentTimeMillis();
+		final long resultD = (finishD - startD);
+		System.out.print("\ndouble adding time, ms: ");
+		System.out.println(resultD);
+		
+		Double wd = 0.0D;
+		final long startWd = System.currentTimeMillis();
+		for (long i = 0; i < num; i++) {
+			++wd;
+		}
+		final long finishWd = System.currentTimeMillis();
+		final long resultWd = (finishWd - startWd);
+		System.out.print("Double adding time, ms: ");
+		System.out.println(resultWd);
+		
+		System.out.println("double adding is quickly then Double adding in " + resultWd/resultD + " times");
 	}
 }
