@@ -23,7 +23,7 @@ package core;
 public class Bench16 {
 
 	public static void main(String[] args) {
-		long num = 1_000_000_000;
+		long num = 1_000_000_000L;
 		
 		//performance comparison between byte vs. Byte by adding the value to itself 1,000,000,000 times 
 		byte b = 0;
